@@ -1,5 +1,164 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-containernetworking-plugins (1.1.1+ds1-3) unstable; urgency=medium
 
-  * Initial release
+  * Team upload
+  * Allow integration test to be flaky
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Shengjing Zhu <zhsj@debian.org>  Mon, 28 Nov 2022 20:02:19 +0800
+
+golang-github-containernetworking-plugins (1.1.1+ds1-2) unstable; urgency=medium
+
+  * Team upload
+  * Run plugin integration tests in autopkgtest
+    + Install plugin source to -dev package so it can be found by
+      dh_golang_autopkgtest.
+    + Portmap plugin test wants iptables-legacy.
+    + Firwall plugin test wants nftables.
+    + Replace dbus with dbus-daemon.
+    + Add patch to not hardcode dbus address with unix:abstract prefix.
+  * Update Standards-Version to 4.6.1 (no changes)
+
+ -- Shengjing Zhu <zhsj@debian.org>  Mon, 14 Nov 2022 00:46:26 +0800
+
+golang-github-containernetworking-plugins (1.1.1+ds1-1) unstable; urgency=medium
+
+  * Team upload
+  * new upstream version 1.1.1+ds1
+
+ -- Reinhard Tartler <siretart@tauware.de>  Fri, 05 Aug 2022 14:05:54 +0200
+
+golang-github-containernetworking-plugins (1.1.0+ds1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 1.1.0+ds1
+  * Run test with ntf backend iptables
+  * Update Build-Depends for new version
+  * Add Multi-Arch hint
+
+ -- Shengjing Zhu <zhsj@debian.org>  Wed, 02 Mar 2022 23:48:47 +0800
+
+golang-github-containernetworking-plugins (1.0.1+ds1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 1.0.1+ds1
+  * Refresh patches
+  * Update package description
+  * Bump golang-github-appc-cni-dev to 1.0.1
+  * Remove obsoleted conflicts on rkt
+  * Bump golang-github-vishvananda-netlink-dev to 1.1.0.125.gf243826
+
+ -- Shengjing Zhu <zhsj@debian.org>  Mon, 21 Feb 2022 23:04:00 +0800
+
+golang-github-containernetworking-plugins (0.9.1+ds1-1) unstable; urgency=medium
+
+  * Team upload
+  * Repack upstream tarball and exclude vendor dir. (Closes: #998449)
+  * Update Standards-Version to 4.6.0 (no changes)
+  * Fix miss creating dir in test
+
+ -- Shengjing Zhu <zhsj@debian.org>  Thu, 11 Nov 2021 10:53:10 +0800
+
+golang-github-containernetworking-plugins (0.9.1-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Shengjing Zhu ]
+  * Fix test which runs with root
+
+  [ Reinhard Tartler ]
+  * Depend on 'iptables', Closes: #997976
+  * New upstream version 0.9.1
+
+ -- Reinhard Tartler <siretart@tauware.de>  Fri, 29 Oct 2021 15:05:53 -0400
+
+golang-github-containernetworking-plugins (0.9.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 0.9.0
+  * Update Section to golang
+  * Update Standards-Version to 4.5.1 (no changes)
+  * Use autopkgtest-go with custom config
+  * Bump golang-github-vishvananda-netlink-dev to 1.1.0-2
+  * Plugin docs are moved to https://www.cni.dev/plugins/
+    No longer available in plugin source repository.
+
+ -- Shengjing Zhu <zhsj@debian.org>  Mon, 11 Jan 2021 00:27:54 +0800
+
+golang-github-containernetworking-plugins (0.8.7-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release: Closes: #975573
+
+ -- Reinhard Tartler <siretart@tauware.de>  Mon, 23 Nov 2020 13:34:49 -0500
+
+golang-github-containernetworking-plugins (0.8.6-2) unstable; urgency=medium
+
+  * Team upload.
+  * Remove main package from -dev package.
+    These packages can not be imported by others.
+  * Stop building echosvr which is a test utility
+  * Conflicts rkt (Closes: #962781)
+    Both have cni-dhcp.service file
+  * Bump debhelper-compat to 13
+  * Add autopkgtest which runs in isolation container
+  * Fix package description format
+  * Fix calling dh_installsystemd twice
+  * Replace golang-ginkgo-dev with golang-github-onsi-ginkgo-dev
+    golang-ginkgo-dev is transition package
+
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 23 Jun 2020 01:29:55 +0800
+
+golang-github-containernetworking-plugins (0.8.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Install "cni-dhcp" socket and service.
+  * Updated team/maintainer email.
+  * Standards-Version: 4.5.0.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Thu, 11 Jun 2020 20:40:17 +1000
+
+golang-github-containernetworking-plugins (0.8.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: set "Rules-Requires-Root: no".
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sun, 26 Jan 2020 20:51:51 +1100
+
+golang-github-containernetworking-plugins (0.8.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * (Build-)Depends:
+    = golang-github-coreos-go-iptables-dev (>= 0.4.5~)
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Mon, 13 Jan 2020 17:47:22 +1100
+
+golang-github-containernetworking-plugins (0.8.3-2) unstable; urgency=medium
+
+  * Install plugins documentation.
+  * dev/Depends: added missing packages.
+  * Do not install "echosvr" test utility.
+  * Install "sample" plugin as example.
+  * Excluded windows plugins.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Tue, 31 Dec 2019 00:32:16 +1100
+
+golang-github-containernetworking-plugins (0.8.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Standards-Version: 4.4.1.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Thu, 14 Nov 2019 16:23:58 +1100
+
+golang-github-containernetworking-plugins (0.8.2-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * (Build-)Depends:
+    + golang-github-alexflint-go-filemutex-dev
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Thu, 17 Oct 2019 02:52:55 +1100
+
+golang-github-containernetworking-plugins (0.8.2-1) experimental; urgency=medium
+
+  * Initial release (Closes: #930900)
+    (Split from "golang-github-appc-cni" package).
+
+ -- Jamie Bliss <jamie@ivyleav.es>  Thu, 26 Sep 2019 20:41:30 +1000

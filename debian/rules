@@ -1,4 +1,20 @@
 #!/usr/bin/make -f
 
+export DH_GOLANG_EXCLUDES := integration plugins/sample plugins/main/windows pkg/testutils/echo
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang --builddirectory=_build
+
+override_dh_auto_test:
+	# tests need netns, which will be run in autopkgtest.
+
+execute_after_dh_auto_install:
+	## Exclude main packages from /usr/share/gocode.
+	## These can not be imported by other packages.
+	find debian/tmp/usr/share/gocode/src/github.com/containernetworking/plugins/ \
+		-type f -exec grep -Eq '^package (main|main_test)$$' '{}' \; -delete -print
+	find debian/tmp/usr/share/gocode/src/github.com/containernetworking/plugins/ \
+		-type d -empty -delete -print
+
+override_dh_installsystemd:
+	dh_installsystemd --name=cni-dhcp --no-enable --no-start

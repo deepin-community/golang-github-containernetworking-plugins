@@ -1,22 +1,193 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: template-repository
-Source: https://github.com/deepin-community/template-repository
+Upstream-Name: containernetworking-plugins
+Source: https://github.com/containernetworking/plugins
+Files-Excluded: vendor
 
 Files: *
-Copyright: 2023 Tsic404 <liuheng@deepin.org>
-License: GPL-2+
- This package is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
+Copyright: 2014-2019, CNI authors
+License: Apache-2.0
+
+Files: DCO
+Copyright: 2004, 2006, The Linux Foundation and its contributors.
+License: Apache-2.0
+
+Files: debian/*
+Copyright:
+    2019 Jamie Bliss <jamie@ivyleav.es>
+    2019 Nicolas Braud-Santoni <nicoo@debian.org>
+    2019 Dmitry Smirnov <onlyjob@debian.org>
+License: Apache-2.0
+
+Files: integration/*
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: integration/testdata/*
+Copyright: 2014-2019, CNI authors
+License: Apache-2.0
+
+Files: pkg/*
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: pkg/ip/ipforward_linux_test.go
+Copyright: 2014-2019, CNI authors
+License: Apache-2.0
+
+Files: pkg/ns/*
+Copyright: 2014-2019, CNI authors
+License: Apache-2.0
+
+Files: pkg/ns/ns_linux.go
+  pkg/ns/ns_linux_test.go
+  pkg/ns/ns_suite_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: pkg/testutils/echo/*
+Copyright: 2014-2019, CNI authors
+License: Apache-2.0
+
+Files: plugins/ipam/dhcp/client.go
+  plugins/ipam/dhcp/daemon.go
+  plugins/ipam/dhcp/dhcp2_test.go
+  plugins/ipam/dhcp/dhcp_suite_test.go
+  plugins/ipam/dhcp/dhcp_test.go
+  plugins/ipam/dhcp/lease.go
+  plugins/ipam/dhcp/main.go
+  plugins/ipam/dhcp/options.go
+  plugins/ipam/dhcp/options_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/ipam/host-local/backend/*
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/ipam/host-local/dns.go
+  plugins/ipam/host-local/dns_test.go
+  plugins/ipam/host-local/host_local_suite_test.go
+  plugins/ipam/host-local/host_local_test.go
+  plugins/ipam/host-local/main.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/ipam/static/main.go
+  plugins/ipam/static/static_suite_test.go
+  plugins/ipam/static/static_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/main/bridge/bridge.go
+  plugins/main/bridge/bridge_suite_test.go
+  plugins/main/bridge/bridge_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/main/host-device/host-device.go
+  plugins/main/host-device/host-device_suite_test.go
+  plugins/main/host-device/host-device_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/main/ipvlan/ipvlan.go
+  plugins/main/ipvlan/ipvlan_suite_test.go
+  plugins/main/ipvlan/ipvlan_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/main/loopback/*
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/main/macvlan/macvlan.go
+  plugins/main/macvlan/macvlan_suite_test.go
+  plugins/main/macvlan/macvlan_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/main/ptp/ptp.go
+  plugins/main/ptp/ptp_suite_test.go
+  plugins/main/ptp/ptp_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/main/vlan/*
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/main/windows/win-bridge/win-bridge_windows.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/main/windows/win-overlay/win-overlay_windows.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/meta/bandwidth/bandwidth_linux_test.go
+  plugins/meta/bandwidth/bandwidth_suite_test.go
+  plugins/meta/bandwidth/ifb_creator.go
+  plugins/meta/bandwidth/main.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/meta/firewall/firewall.go
+  plugins/meta/firewall/firewall_firewalld_test.go
+  plugins/meta/firewall/firewall_integ_test.go
+  plugins/meta/firewall/firewall_iptables_test.go
+  plugins/meta/firewall/firewall_suite_test.go
+  plugins/meta/firewall/firewalld.go
+  plugins/meta/firewall/ingresspolicy.go
+  plugins/meta/firewall/iptables.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/meta/portmap/chain.go
+  plugins/meta/portmap/chain_test.go
+  plugins/meta/portmap/main.go
+  plugins/meta/portmap/portmap.go
+  plugins/meta/portmap/portmap_integ_test.go
+  plugins/meta/portmap/portmap_suite_test.go
+  plugins/meta/portmap/portmap_test.go
+  plugins/meta/portmap/utils.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/meta/sbr/main.go
+  plugins/meta/sbr/sbr_linux_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/meta/tuning/tuning.go
+  plugins/meta/tuning/tuning_suite_test.go
+  plugins/meta/tuning/tuning_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/meta/vrf/main.go
+  plugins/meta/vrf/vrf.go
+  plugins/meta/vrf/vrf_suite_test.go
+  plugins/meta/vrf/vrf_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+Files: plugins/sample/main.go
+  plugins/sample/sample_linux_test.go
+Copyright: 2014-2022, CNI authors
+License: Apache-2.0
+
+License: Apache-2.0
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
  .
- This package is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+ http://www.apache.org/licenses/LICENSE-2.0
  .
- You should have received a copy of the GNU General Public License
- along with this program. If not, see <https://www.gnu.org/licenses/>
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
  .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the complete text of the Apache version 2.0 license
+ can be found in "/usr/share/common-licenses/Apache-2.0".

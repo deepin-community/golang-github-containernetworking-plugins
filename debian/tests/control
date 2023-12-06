@@ -1,0 +1,8 @@
+Tests: integration
+Depends: dbus-daemon,
+         iproute2,
+         iptables,
+         iputils-ping,
+         nftables,
+         @builddeps@,
+Restrictions: allow-stderr, needs-root, isolation-container, flaky
