@@ -1,0 +1,21 @@
+From: Shengjing Zhu <zhsj@debian.org>
+Date: Mon, 14 Nov 2022 00:43:10 +0800
+Subject: dbus address may not start with unix:abstract
+
+---
+ plugins/meta/firewall/firewall_firewalld_test.go | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/plugins/meta/firewall/firewall_firewalld_test.go b/plugins/meta/firewall/firewall_firewalld_test.go
+index e6f2f2c..c89832b 100644
+--- a/plugins/meta/firewall/firewall_firewalld_test.go
++++ b/plugins/meta/firewall/firewall_firewalld_test.go
+@@ -84,7 +84,7 @@ func spawnSessionDbus(wg *sync.WaitGroup) (string, *exec.Cmd) {
+ 	bytes, err := bufio.NewReader(stdout).ReadString('\n')
+ 	Expect(err).NotTo(HaveOccurred())
+ 	busAddr := strings.TrimSpace(string(bytes))
+-	Expect(strings.HasPrefix(busAddr, "unix:abstract")).To(BeTrue())
++	Expect(busAddr).NotTo(BeEmpty())
+ 
+ 	var startWg sync.WaitGroup
+ 	wg.Add(1)
